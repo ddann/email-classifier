@@ -80,4 +80,4 @@ def RAWEmail(mail: EmailMessage) -> str:
 
     return: Raw email
     """
-    return mail.decode('utf-8')
+    return mail.as_string()

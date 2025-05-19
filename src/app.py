@@ -67,10 +67,13 @@ if monitor and email_id and app_password:
                         st.subheader("Body:")
                         st.write(body)
                         
-                        st.markdown(f'''## Team to which this mail should be forwarded to:\n
-```
-{return_ans(f"From: {sender}\n\nSubject: {subject}\n\nBody: {body}")['team']}
-```''')
+                        team = return_ans(
+                            f"From: {sender}\n\nSubject: {subject}\n\nBody: {body}"
+                        )["team"]
+                        st.markdown(
+                            f"## Team to which this mail should be forwarded to:\n"
+                            f"```{team}```"
+                        )
             
             
         with st.spinner('Checking for mail...'):
